@@ -6,16 +6,8 @@
 
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Arvo|Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="/angularjs-datetime-picker/angularjs-datetime-picker.css">
     <link rel="stylesheet" href="indexstyle.css">
-
-    <script src="/jquery/dist/jquery.js"></script>
-
-    <script src="/bootstrap/dist/js/bootstrap.js"></script>
-
-
-    <script src="/angular/angular.js"></script>
-
-    <script src="todo.js"></script>
 </head>
 <body>
 <div class="container-fluid greybox" ng-controller="todoCtrl as ctrl">
@@ -31,7 +23,7 @@
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 leftPanel">
         <ul class="list-unstyled">
             <li ng-repeat="todo in ctrl.todos" class="itemStyle">
-                <span class="priority-{{todo.priority}} done-{{todo.done}}">{{todo.text}}</span>
+                <span class="priority-{{todo.priority}} done-{{todo.done}}">{{todo.text}}({{ctrl.timeLeft(todo)}})</span>
                 <input type="checkbox" name="checkbox" id="checkbox" ng-model="todo.done">
             </li>
         </ul>
@@ -45,7 +37,8 @@
 
             <div class="form-group">
                 <label for="task" class="rightPanel">Task</label>
-                <input type="text" class="form-control rightPanel" name="task" id="task" placeholder="Stop procrastinating!"
+                <input type="text" class="form-control selectBox rightPanel" name="task" id="task"
+                       placeholder="Stop procrastinating!"
                        ng-model="ctrl.task" required>
                 <span class="help-block rightPanel" ng-show="formV.task.$dirty && formV.task.$invalid">
                     Please fill in task.
@@ -54,17 +47,15 @@
 
             <div class="form-group">
                 <label for="date" class="rightPanel">Due Date</label>
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='date' class="form-control" name="date" id="date">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
+                <input datetime-picker class="form-control selectBox rightPanel" date-format="MM-dd-yyyy hh:mm a"
+                       close-on-select="false" placeholder="Tickity-tock" name="date" id="date" ng-model="ctrl.dueDate">
+                <!--<input ng-model="date3" datetime-picker date-format="yyyy-MM-dd HH:mm:ss" />-->
             </div>
 
             <div class="form-group">
                 <label for="priority" class="rightPanel">Priority</label>
-                <select class="form-control selectBox rightPanel" name="priority" id="priority" ng-model="ctrl.priority">
+                <select class="form-control selectBox rightPanel" name="priority" id="priority"
+                        ng-model="ctrl.priority" required>
                     <option value="" class="rightPanel" selected disabled hidden>What's the task's priority?</option>
                     <option value="1" class="rightPanel immediate">Immediate!</option>
                     <option value="2" class="rightPanel normal">Normal-</option>
@@ -72,7 +63,8 @@
                 </select>
             </div>
 
-            <button type="button" class="btn btn-primary" ng-click="ctrl.list()" ng-disabled="formV.$invalid">
+            <button type="button" class="btn btn-primary" ng-click="ctrl.list();"
+                    ng-disabled="formV.$invalid">
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Add
             </button>
         </form>
@@ -80,11 +72,9 @@
 </div>
 
 </body>
-
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker();
-    });
-</script>
-
+<script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/angular/angular.min.js"></script>
+<script type="text/javascript" src="/angularjs-datetime-picker/angularjs-datetime-picker.min.js"></script>
+<script type="text/javascript" src="todo.js"></script>
 </html>
