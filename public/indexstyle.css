@@ -1,0 +1,97 @@
+.greybox {
+    margin: 2vmin;
+    border: 1vmin solid #8c8b8b;
+    border-radius: 15px;
+    padding-bottom: 2vmin;
+}
+
+.title {
+    font-family: 'Arvo', serif;
+    font-size: 8vmin;
+}
+
+hr.line1 {
+    background-color: #fff;
+    border-top: 1vmin dashed #8c8b8b;
+}
+
+.itemStyle {
+    font-family: 'Indie Flower', cursive;
+    font-size: 8vmin;
+}
+
+.leftPanel {
+    border-right: 1vmin solid #8c8b8b;
+    padding: 1vmin;
+    min-height: 100vmin;
+}
+
+.priority-1 {
+    color: red;
+}
+
+.priority-2 {
+    color: darkslategrey;
+}
+
+.priority-3 {
+    color: cornflowerblue;
+}
+
+.done-true {
+    text-decoration: line-through;
+    color: gray;
+    font-style: italic;
+}
+
+.rightPanel {
+    font-family: 'Arvo', serif;
+    font-size: 3vmin;
+    color: black;
+}
+
+form.ng-dirty input.ng-invalid {
+    border-color: red;
+}
+
+.selectBox{
+    height: 6.2vmin;
+    color: #999999;
+}
+
+.immediate {
+    font-size: 2.5vmin;
+    color: red;
+
+}
+
+.normal {
+    font-size: 2.5vmin;
+    color: darkslategrey;
+}
+
+.chill {
+    font-size: 2.5vmin;
+    color: cornflowerblue;
+}
+
+.btn-primary, .btn-primary:disabled {
+    color: antiquewhite;
+    background-color: dimgrey;
+    border-color: lightgrey;
+    font-family: 'Indie Flower', cursive;
+    font-size: 6vmin;
+    border-radius: 24px;
+    padding-top: 2.5vmin;
+}
+
+.btn-primary:hover, .btn-primary:hover:disabled, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    color: antiquewhite;
+    background-color: slategrey;
+    border-color: darkslategray;
+    font-family: 'Indie Flower', cursive;
+    font-size: 8vmin;
+}
+
+
+
