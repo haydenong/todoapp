@@ -15,15 +15,15 @@ hr.line1 {
     border-top: 1vmin dashed #8c8b8b;
 }
 
-.itemStyle {
-    font-family: 'Indie Flower', cursive;
-    font-size: 8vmin;
-}
-
 .leftPanel {
     border-right: 1vmin solid #8c8b8b;
     padding: 1vmin;
     min-height: 100vmin;
+}
+
+.itemStyle {
+    font-family: 'Indie Flower', cursive;
+    font-size: 5vmin;
 }
 
 .priority-1 {
@@ -44,9 +44,30 @@ hr.line1 {
     font-style: italic;
 }
 
-.timeLeft{
-    font-size: 5vmin;
-    text-decoration: underline;
+/*css to replace checkboxes*/
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label {
+    background-image: url("checkbox-unchecked-gray-hi.png");
+    background-size: 5.5vmin;
+    height: 5.5vmin;
+    width: 5.5vmin;
+    display: inline-block;
+    padding: 0 0 0 0;
+    margin-bottom: -0.5vmin;
+}
+
+input[type=checkbox]:checked + label {
+    background: url("checkbox-checked-gray-md.png");
+    background-size: 5.5vmin;
+    height: 5.5vmin;
+    width: 5.5vmin;
+    display: inline-block;
+    padding: 0 0 0  0;
+    margin-bottom: -0.5vmin;
+
 }
 
 .rightPanel {
@@ -59,11 +80,11 @@ hr.line1 {
     border: 0.5vmin solid black;
 }
 
-#priority.ng-touched, #priority.ng-pending, #date.ng-touched, #date.ng-pending{
+#priority.ng-touched, #priority.ng-pending, #date.ng-touched, #date.ng-pending {
     border: 0.5vmin solid black;
 }
 
-.selectBox{
+.selectBox {
     height: 6.2vmin;
     color: #999999;
 }
@@ -103,18 +124,17 @@ hr.line1 {
     border-radius: 5vmin;
 }
 
-@media (max-width:992px) {
-    .leftPanel{
+@media (max-width: 992px) {
+    .leftPanel {
         border-right: 0px;
         padding: 1vmin;
         height: auto;
     }
 
-    .selectBox{
+    .selectBox {
         height: 8vmin;
         color: #999999;
     }
-
 
 }
 

@@ -89,9 +89,14 @@
                 }
             }
             return result;
-        }
+        };
+        
+        ctrl.remove = function (todo) {
+            var index = ctrl.todos.indexOf(todo);
+            ctrl.todos.splice(index, 1);
+        };
 
 
-    }
+    };
     todo.controller("todoCtrl", [todoCtrl]);
 })();

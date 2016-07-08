@@ -23,12 +23,12 @@
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 leftPanel">
         <ul class="list-unstyled">
             <li ng-repeat="todo in ctrl.todos" class="itemStyle">
-                <span class="priority-{{todo.priority}} done-{{todo.done}}">{{todo.text}}
-                    (<span class="priority-{{todo.priority}} done-{{todo.done}} timeLeft">
-                    {{ctrl.timeLeft(todo)}}
-                    </span>)
+                <span class="priority-{{todo.priority}} done-{{todo.done}}">
+                    {{todo.text}}({{ctrl.timeLeft(todo)}})
                 </span>
-                <input type="checkbox" name="checkbox" id="checkbox" ng-model="todo.done">
+                <input type="checkbox" name="checkbox" id="{{todo.text}}"
+                       ng-model="todo.done"><label for="{{todo.text}}"></label>
+                <span class="glyphicon glyphicon-trash" ng-click="ctrl.remove(todo)"></span>
             </li>
         </ul>
         <hr class="line1">
