@@ -23,7 +23,11 @@
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 leftPanel">
         <ul class="list-unstyled">
             <li ng-repeat="todo in ctrl.todos" class="itemStyle">
-                <span class="priority-{{todo.priority}} done-{{todo.done}}">{{todo.text}}({{ctrl.timeLeft(todo)}})</span>
+                <span class="priority-{{todo.priority}} done-{{todo.done}}">{{todo.text}}
+                    (<span class="priority-{{todo.priority}} done-{{todo.done}} timeLeft">
+                    {{ctrl.timeLeft(todo)}}
+                    </span>)
+                </span>
                 <input type="checkbox" name="checkbox" id="checkbox" ng-model="todo.done">
             </li>
         </ul>
@@ -40,27 +44,33 @@
                 <input type="text" class="form-control selectBox rightPanel" name="task" id="task"
                        placeholder="Stop procrastinating!"
                        ng-model="ctrl.task" required>
-                <span class="help-block rightPanel" ng-show="formV.task.$dirty && formV.task.$invalid">
-                    Please fill in task.
+                <span class="help-block rightPanel" ng-show="formV.task.$touched && formV.task.$invalid">
+                    What is your task?
                 </span>
             </div>
 
             <div class="form-group">
                 <label for="date" class="rightPanel">Due Date</label>
-                <input datetime-picker class="form-control selectBox rightPanel" date-format="MM-dd-yyyy hh:mm a"
-                       close-on-select="false" placeholder="Tickity-tock" name="date" id="date" ng-model="ctrl.dueDate">
-                <!--<input ng-model="date3" datetime-picker date-format="yyyy-MM-dd HH:mm:ss" />-->
+                <input datetime-picker class="form-control selectBox rightPanel"
+                       date-format="dd/MM/yyyy, hh:mma" close-on-select="false" placeholder="Tickity-tock"
+                       name="date" id="date" ng-model="ctrl.dueDate">
+                <span class="help-block rightPanel" ng-show="formV.date.$touched || formV.date.$pending">
+                    When is it due?
+                </span>
             </div>
 
             <div class="form-group">
                 <label for="priority" class="rightPanel">Priority</label>
                 <select class="form-control selectBox rightPanel" name="priority" id="priority"
-                        ng-model="ctrl.priority" required>
+                        ng-model="ctrl.priority" maxlength="14">
                     <option value="" class="rightPanel" selected disabled hidden>What's the task's priority?</option>
                     <option value="1" class="rightPanel immediate">Immediate!</option>
                     <option value="2" class="rightPanel normal">Normal-</option>
                     <option value="3" class="rightPanel chill">Chill~</option>
                 </select>
+                <span class="help-block rightPanel" ng-show="formV.priority.$touched || formV.priority.$error.maxlength">
+                    How important is it?
+                </span>
             </div>
 
             <button type="button" class="btn btn-primary" ng-click="ctrl.list();"

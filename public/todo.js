@@ -47,22 +47,28 @@
         };
 
         // //Function for Today's date
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1; //January is 0!
-        var yyyy = today.getFullYear();
-        if (dd < 10) {
-            dd = '0' + dd
-        }
-        if (mm < 10) {
-            mm = '0' + mm
-        }
-        today = dd + '-' + mm + '-' + yyyy;
+        var todaysDate = function () {
+            today = new Date();
+            dd = today.getDate();
+            mm = today.getMonth() + 1; //January is 0!
+            yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+            return today = dd + '-' + mm + '-' + yyyy;
+        };
+
         //Function for today's date^^
         ctrl.timeLeft = function (todo) {
+            todaysDate();
             if (today == todo.dueDateString) {
-                return "Today";
-            } else if (todo.dueDateStringDD - dd == 1 && todo.dueDateStringMM == mm) {
+                var dueTime = todo.dueDate.split(" ");
+                return "Today, " + dueTime[1];
+            } else if ((+todo.dueDateStringDD) - (+dd) == 1 && todo.dueDateStringMM == mm) {
+
                 return "Tomorrow";
             } else {
                 return todo.dueDate;

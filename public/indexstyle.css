@@ -44,14 +44,23 @@ hr.line1 {
     font-style: italic;
 }
 
+.timeLeft{
+    font-size: 5vmin;
+    text-decoration: underline;
+}
+
 .rightPanel {
     font-family: 'Arvo', serif;
     font-size: 3vmin;
     color: black;
 }
 
-form.ng-dirty input.ng-invalid {
-    border-color: red;
+#task.ng-touched, form.ng-touched input.ng-invalid {
+    border: 0.5vmin solid black;
+}
+
+#priority.ng-touched, #priority.ng-pending, #date.ng-touched, #date.ng-pending{
+    border: 0.5vmin solid black;
 }
 
 .selectBox{
@@ -81,8 +90,8 @@ form.ng-dirty input.ng-invalid {
     border-color: lightgrey;
     font-family: 'Indie Flower', cursive;
     font-size: 6vmin;
-    border-radius: 24px;
-    padding-top: 2.5vmin;
+    border-radius: 7vmin;
+    padding-top: 2vmin;
 }
 
 .btn-primary:hover, .btn-primary:hover:disabled, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
@@ -90,8 +99,23 @@ form.ng-dirty input.ng-invalid {
     background-color: slategrey;
     border-color: darkslategray;
     font-family: 'Indie Flower', cursive;
-    font-size: 8vmin;
+    font-size: 7vmin;
+    border-radius: 5vmin;
 }
 
+@media (max-width:992px) {
+    .leftPanel{
+        border-right: 0px;
+        padding: 1vmin;
+        height: auto;
+    }
+
+    .selectBox{
+        height: 8vmin;
+        color: #999999;
+    }
+
+
+}
 
 
