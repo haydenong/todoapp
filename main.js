@@ -9,13 +9,8 @@ app.use(express.static(public));
 app.use(express.static(__dirname + "/bower_components"));
 
 
-app.get("/register",function (req,res) {
 
-});
 
-app.get("/thankyou", function(req , res) {
-    res.redirect("thankyou1.html");
-});
 
 app.use(function (req,res) {
     console.info("FILE NOT FOUND IN PUBLIC: %s", req.originalUrl);

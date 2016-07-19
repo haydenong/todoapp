@@ -65,44 +65,52 @@ input[type=checkbox]:checked + label {
     height: 5.5vmin;
     width: 5.5vmin;
     display: inline-block;
-    padding: 0 0 0  0;
+    padding: 0 0 0 0;
     margin-bottom: -0.5vmin;
 
 }
 
 .rightPanel {
     font-family: 'Arvo', serif;
-    font-size: 3vmin;
+    font-size: 2.5vmin;
     color: black;
 }
 
-#task.ng-touched, form.ng-touched input.ng-invalid {
+.selectBoxHeight {
+    min-height: 6.2vmin;
+}
+
+input.ng-touched, #priority.ng-touched {
     border: 0.5vmin solid black;
 }
 
-#priority.ng-touched, #priority.ng-pending, #date.ng-touched, #date.ng-pending {
-    border: 0.5vmin solid black;
+#priority {
+    font-size: 2.5vmin;
+    color: #A2ACB5;
 }
 
-.selectBox {
-    height: 6.2vmin;
-    color: #999999;
+.fakePlaceholder {
+    color: #C7C7CD;
+    font-family: 'Arvo', serif;
+    font-size: 2.5vmin;
 }
 
 .immediate {
     font-size: 2.5vmin;
     color: red;
-
+    font-family: 'Arvo', serif;
 }
 
 .normal {
     font-size: 2.5vmin;
     color: darkslategrey;
+    font-family: 'Arvo', serif;
 }
 
 .chill {
     font-size: 2.5vmin;
     color: cornflowerblue;
+    font-family: 'Arvo', serif;
 }
 
 .btn-primary, .btn-primary:disabled {
@@ -133,7 +141,6 @@ input[type=checkbox]:checked + label {
 
     .selectBox {
         height: 8vmin;
-        color: #999999;
     }
 
 }
