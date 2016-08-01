@@ -5,9 +5,16 @@
     padding-bottom: 2vmin;
 }
 
+.titleIcon {
+    height: 9vmin;
+    width: 9vmin;
+    margin-top: -2.5vmin;
+}
+
 .title {
     font-family: 'Arvo', serif;
     font-size: 8vmin;
+    margin-bottom: 0;
 }
 
 hr.line1 {
@@ -18,12 +25,23 @@ hr.line1 {
 .leftPanel {
     border-right: 1vmin solid #8c8b8b;
     padding: 1vmin;
-    min-height: 100vmin;
+    min-height: 50vmin;
 }
 
 .itemStyle {
     font-family: 'Indie Flower', cursive;
     font-size: 5vmin;
+}
+
+.icons {
+    font-size: 3vmin;
+    padding-top: 2vmin;
+    padding-bottom: -2vmin;
+    margin: 1vmin;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: gray;
 }
 
 .priority-1 {
@@ -38,7 +56,7 @@ hr.line1 {
     color: cornflowerblue;
 }
 
-.done-true {
+.done-true, .done-1 {
     text-decoration: line-through;
     color: gray;
     font-style: italic;
@@ -56,7 +74,7 @@ input[type=checkbox] + label {
     width: 5.5vmin;
     display: inline-block;
     padding: 0 0 0 0;
-    margin-bottom: -0.5vmin;
+    margin-bottom: -1vmin;
 }
 
 input[type=checkbox]:checked + label {
@@ -66,7 +84,7 @@ input[type=checkbox]:checked + label {
     width: 5.5vmin;
     display: inline-block;
     padding: 0 0 0 0;
-    margin-bottom: -0.5vmin;
+    margin-bottom: -1vmin;
 
 }
 

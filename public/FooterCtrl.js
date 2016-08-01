@@ -13,13 +13,25 @@
         //Function for number of outstanding tasks
         vm.outstandingTasks = function () {
             var result = 0;
-            for (i = 0; i < vm.numberOfTasks; i++) {
-                if (vm.listOfTasks[i].done == false) {
+
+            // PersistSvc.tasks.forEach(function (todo, index) {
+            //     if(todo.done == false){
+            //         result++
+            //     }
+            // });
+            //
+            var tasks =  PersistSvc.tasks;
+            for (i = 0; i < tasks.length; i++) {
+                if (tasks[i].done == 0) {
                     result++
                 }
             }
             return result;
         };
+
+        vm.numberOfTasks = function() {
+            return PersistSvc.tasks.length;
+        }
     }
 })();
 
