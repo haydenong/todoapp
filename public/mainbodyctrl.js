@@ -10,7 +10,7 @@
 
         PersistSvc.listTasks()
             .then(function (tasks) {
-                console.log(tasks);
+                // console.log(tasks);
                 vm.listOfTasks = tasks.data;
             });
 
@@ -47,10 +47,10 @@
 
                 return "Tomorrow";
             } else {
-                console.log(typeof todo.dueDate);
-                console.log(todo.dueDate);
-                console.log(typeof todaysDate());
-                console.log(today);
+                // console.log(typeof todo.dueDate);
+                // console.log(todo.dueDate);
+                // console.log(typeof todaysDate());
+                // console.log(today);
 
                 return todo.dueDate + " " + todo.dueTime;
             }
@@ -59,7 +59,7 @@
         //FUNCTION FOR UPDATING TASK
         vm.updateTask = function (task) {
             PersistSvc.updateTask(task, function () {
-                console.log('update initiated');
+                // console.log('update initiated');
             })
                 .then(function (result) {
                     console.log(result);
@@ -74,7 +74,7 @@
 
         //FUNCTION FOR DELETING TASK
         vm.deleteTask = function (task) {
-            console.log('deleteTask initiated');
+            // console.log('deleteTask initiated');
             PersistSvc.deleteTask(task)
                 .then(function (result) {
                     console.log(result);
