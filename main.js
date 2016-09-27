@@ -58,8 +58,6 @@ app.delete("/task/delete", function (req, res) {
             console.log('conn err');
             return handleError(err, res);
         }
-        console.log('>> req url: ' + req.protocol + "://" + req.get('host') + req.originalUrl);
-        console.log('>> req data: ' + JSON.stringify(req.data));
         connection.query("DELETE FROM todo WHERE id=?", [req.body.id],
             function (err, results) {
                 connection.release();

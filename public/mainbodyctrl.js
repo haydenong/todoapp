@@ -10,7 +10,7 @@
 
         PersistSvc.listTasks()
             .then(function (tasks) {
-                console.log(tasks)
+                console.log(tasks);
                 vm.listOfTasks = tasks.data;
             });
 
@@ -100,12 +100,6 @@
             vm.listOfTasks[destination] = vm.listOfTasks[origin];
             vm.listOfTasks[origin] = temp;
         };
-
-        // vm.moveItem = function (2, destination) {
-        //     var temp = vm.listOfTasks[1];
-        //     vm.listOfTasks[1] = vm.listOfTasks[2];
-        //     vm.listOfTasks[2] = temp;
-        // };
 
 // Move list item Up
         vm.listItemUp = function (itemIndex) {

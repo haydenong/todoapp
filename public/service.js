@@ -76,7 +76,6 @@
                 headers: {"Content-Type" : "application/json;charset=utf8"}
             } )
                 .then(function (result) {
-
                     defer.resolve(result);
                 })
                 .catch(function (err) {
